@@ -2,6 +2,7 @@ const endPoint = "http://localhost:3000/api/v1/appointments" // global variable
 
 document.addEventListener("DOMContentLoaded", () => {
     // fetch & load appointments
+    console.log("DOMContentLoaded")
     getAppointments()
 
   let createAppointmentForm = document.querySelector("#create-appointment-form")
@@ -11,16 +12,19 @@ document.addEventListener("DOMContentLoaded", () => {
 function getAppointments() {
     fetch(endPoint)
     .then(response => response.json())
+    .catch(err => console.log(err)) // displays error in console
     .then(appointments => {
+        console.log(appointments)
         appointments.data.forEach(appointment => {
-        render(appointment)
+        //debugger
+            render(appointment)
         })
     })
 }
 
-function render(appointment) {
+function render(appointment) {  // render function 
     const appointmentMarkup = `
-        <div data-id=${appointment.id}>
+        <div data-id=${appointment}>
         <p>${appointment.attributes.first_name}</p>
         <p>${appointment.attributes.datetime}</p>
         </div>
