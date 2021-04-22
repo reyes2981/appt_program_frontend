@@ -15,8 +15,7 @@ function getAppointments() {
     .catch(err => console.log(err)) // displays error in console
     .then(appointments => {
         console.log(appointments)
-        appointments.data.forEach(appointment => {
-        //debugger
+        appointments.data.forEach(appointment => { // loop 
             render(appointment)
         })
     })
@@ -24,7 +23,7 @@ function getAppointments() {
 
 function render(appointment) {  // render function 
     const appointmentMarkup = `
-        <div data-id=${appointment}>
+        <div data-id=${appointment.id}>
         <p>${appointment.attributes.first_name}</p>
         <p>${appointment.attributes.datetime}</p>
         </div>
@@ -51,7 +50,7 @@ function postAppointment(first_name) { // Going to hit CREATE method in backend 
     })
     .then(response => response.json()) 
     .then(appointment => {
-        console.log(appointment);
+        console.log(appointment); 
         const apptData = appointment.data
         render(apptData)
 
