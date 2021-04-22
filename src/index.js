@@ -16,6 +16,10 @@ function getAppointments() {
     .then(appointments => {
         console.log(appointments)
         appointments.data.forEach(appointment => { // loop 
+            debugger
+
+            let newAppointment = new Appointment(appointment.id, appointment.attributes)
+
             render(appointment)
         })
     })
