@@ -2,40 +2,27 @@ const endPoint = "http://localhost:3000/api/v1/appointments" // global variable
 
 document.addEventListener("DOMContentLoaded", () => {
     // fetch & load appointments
-    console.log("DOMContentLoaded")
+    console.log("DOM Content Loaded")
     getAppointments()
 
-  let createAppointmentForm = document.querySelector("#create-appointment-form")
+  const createAppointmentForm = document.querySelector("#create-appointment-form")
   createAppointmentForm.addEventListener("submit", (e) => createFormHandler(e))
 })
 
 function getAppointments() {
     fetch(endPoint)
     .then(response => response.json())
-    .catch(err => console.log(err)) // displays error in console
+    // displays error in console .catch(err => console.log(err)) 
     .then(appointments => {
         console.log(appointments)
         appointments.data.forEach(appointment => { // loop 
-            debugger
 
-            let newAppointment = new Appointment(appointment.id, appointment.attributes)
-
-            render(appointment)
+            let newAppointment = new Appointment(appointment, appointment.attributes)
+            document.querySelector('#appointment-container').innerHTML += newAppointment.renderAppointmentCard()
+            //render(appointment)
         })
     })
 }
-
-function render(appointment) {  // render function 
-    const appointmentMarkup = `
-        <div data-id=${appointment.id}>
-        <p>${appointment.attributes.first_name}</p>
-        <p>${appointment.attributes.datetime}</p>
-        </div>
-        <br><br>`;
-
-    document.querySelector('#appointment-container').innerHTML += appointmentMarkup
-}
-
 
 function createFormHandler(e) {
     e.preventDefault()
@@ -56,7 +43,9 @@ function postAppointment(first_name) { // Going to hit CREATE method in backend 
     .then(appointment => {
         console.log(appointment); 
         const apptData = appointment.data
-        render(apptData)
+        let newAppointment = new Appointment(apptData, apptData.attributes)
+        document.querySelector('#appointment-container').innerHTML += newAppointment.renderAppointmentCard()
+        
 
     })
 }
