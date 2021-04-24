@@ -27,14 +27,19 @@ function getAppointments() {
 function createFormHandler(e) {
     e.preventDefault()
     const firstNameInput = document.querySelector("#first-name").value
-    const customerId = parseInt(document.querySelector('#appointments').value)
+    const lastNameInput = document.querySelector("#last-name").value
+    const emailInput = document.querySelector("#email").value
+    const serviceInput = document.querySelector("#service").value
+    const hairdresserInput = document.querySelector("#hairdresser").value
+    const datetimeInput = document.querySelector("#datetime").value
 
-    postAppointment(firstNameInput)
+
+    postAppointment(firstNameInput, lastNameInput, emailInput, serviceInput, hairdresserInput, datetimeInput)
 }
                 // ^ needs to match below
-function postAppointment(first_name) { // Going to hit CREATE method in backend API
-    console.log(first_name)
-    let bodyData = {first_name}
+function postAppointment(first_name, last_name, email, service_id, hairdresser_id, datetime) { // Going to hit CREATE method in backend API
+    console.log(first_name, last_name, email, service_id, hairdresser_id, datetime)
+    let bodyData = {first_name, last_name, email, service_id, hairdresser_id, datetime}
 
     fetch(endPoint, {
         method: "POST",
