@@ -27,6 +27,8 @@ function getAppointments() {
 function createFormHandler(e) {
     e.preventDefault()
     const firstNameInput = document.querySelector("#first-name").value
+    const customerId = parseInt(document.querySelector('#appointments').value)
+
     postAppointment(firstNameInput)
 }
                 // ^ needs to match below
