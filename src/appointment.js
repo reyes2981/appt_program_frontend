@@ -5,8 +5,8 @@ class Appointment {
         this.first_name = appointmentAttributes.first_name
         this.last_name = appointmentAttributes.last_name
         this.email = appointmentAttributes.email
-        this.service = appointmentAttributes.service_id
-        this.hairdresser = appointmentAttributes.hairdresser_id
+        this.service = appointmentAttributes.service
+        this.hairdresser = appointmentAttributes.hairdresser
 
         this.datetime = appointmentAttributes.datetime
         Appointment.all.push(this)
