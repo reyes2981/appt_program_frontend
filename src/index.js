@@ -29,12 +29,12 @@ function createFormHandler(e) {
     const firstNameInput = document.querySelector("#first-name").value
     const lastNameInput = document.querySelector("#last-name").value
     const emailInput = document.querySelector("#email").value
-    const serviceInput = document.querySelector("#service").value
-    const hairdresserInput = document.querySelector("#hairdresser").value
+    const serviceId = parseInt(document.querySelector("#services").value)
+    const hairdresserId = parseInt(document.querySelector("#hairdressers").value)
     const datetimeInput = document.querySelector("#datetime").value
 
 
-    postAppointment(firstNameInput, lastNameInput, emailInput, serviceInput, hairdresserInput, datetimeInput)
+    postAppointment(firstNameInput, lastNameInput, emailInput, serviceId, hairdresserId, datetimeInput)
 }
                 // ^ needs to match below
 function postAppointment(first_name, last_name, email, service_id, hairdresser_id, datetime) { // Going to hit CREATE method in backend API
