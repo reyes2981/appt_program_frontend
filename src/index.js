@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
     getAppointments()
 
   const createAppointmentForm = document.querySelector("#create-appointment-form")
-  createAppointmentForm.addEventListener("submit", (e) => createFormHandler(e))
+  createAppointmentForm.addEventListener("submit", (e) => createFormHandler(e) 
+  )
+
 })
 
 function getAppointments() {
@@ -56,4 +58,13 @@ function postAppointment(first_name, last_name, email, service_id, hairdresser_i
 
     })
 }
+
+function myFunction() {
+    var x = document.getElementById("create-appointment-form");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
 

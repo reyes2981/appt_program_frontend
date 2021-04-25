@@ -10,7 +10,7 @@ class Appointment {
 
         this.datetime = appointmentAttributes.datetime
         Appointment.all.push(this)
-    /console.log(this);
+        //console.log(this);
     }
 
     renderAppointmentCard() {  // render function 
@@ -21,7 +21,7 @@ class Appointment {
             <p>${this.last_name}</p>
             <p>${this.email}</p>
             <p>${this.hairdresser.first_name}</p>
-            <p>${this.service}</p>
+            <p>${this.service.name}</p>
             <p>${this.datetime}</p>
             </div>
             <br><br>`;
