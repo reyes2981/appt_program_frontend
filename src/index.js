@@ -3,12 +3,11 @@ const endPoint = "http://localhost:3000/api/v1/appointments" // global variable
 document.addEventListener("DOMContentLoaded", () => {
     // fetch & load appointments
     console.log("DOM Content Loaded")
-   // getAppointments()
+    //getAppointments()
   
 
   const createAppointmentForm = document.querySelector("#create-appointment-form")
   createAppointmentForm.addEventListener("submit", (e) => createFormHandler(e)
-
   )
 
 })
@@ -52,7 +51,7 @@ function postAppointment(first_name, last_name, email, service_id, hairdresser_i
         console.log(appointment); 
         const apptData = appointment.data
         let newAppointment = new Appointment(apptData, apptData.attributes)
-       // document.querySelector('#appointment-container').innerHTML += newAppointment.renderAppointmentCard()
+        document.querySelector('#appointment-container').innerHTML += newAppointment.renderAppointmentCard()
 
     })
 }
@@ -64,6 +63,5 @@ function hideForm() {
     } else {
       x.style.display = "none";
     }
-
-  }
+}
 
