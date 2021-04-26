@@ -4,9 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // fetch & load appointments
     console.log("DOM Content Loaded")
     getAppointments()
+  
 
   const createAppointmentForm = document.querySelector("#create-appointment-form")
-  createAppointmentForm.addEventListener("submit", (e) => createFormHandler(e) 
+  createAppointmentForm.addEventListener("submit", (e) => createFormHandler(e)
+
   )
 
 })
@@ -41,26 +43,26 @@ function createFormHandler(e) {
                 // ^ needs to match below
 function postAppointment(first_name, last_name, email, service_id, hairdresser_id, datetime) { // Going to hit CREATE method in backend API
     console.log(first_name, last_name, email, service_id, hairdresser_id, datetime)
-    let bodyData = {first_name, last_name, email, service_id, hairdresser_id, datetime}
+    const bodyData = {first_name, last_name, email, service_id, hairdresser_id, datetime}
 
     fetch(endPoint, {
         method: "POST",
         headers: {"Content-Type": "application/json"}, 
         body: JSON.stringify(bodyData)
-    })
+    }) 
     .then(response => response.json()) 
     .then(appointment => {
         console.log(appointment); 
         const apptData = appointment.data
         let newAppointment = new Appointment(apptData, apptData.attributes)
         document.querySelector('#appointment-container').innerHTML += newAppointment.renderAppointmentCard()
-        
+
 
     })
 }
 
 function myFunction() {
-    var x = document.getElementById("create-appointment-form");
+    var x = document.querySelector(".form-container");
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {

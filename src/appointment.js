@@ -7,7 +7,6 @@ class Appointment {
         this.email = appointmentAttributes.email
         this.service = appointmentAttributes.service
         this.hairdresser = appointmentAttributes.hairdresser
-
         this.datetime = appointmentAttributes.datetime
         Appointment.all.push(this)
         //console.log(this);
