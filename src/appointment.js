@@ -8,7 +8,7 @@ class Appointment {
         this.service = appointmentAttributes.service
         this.hairdresser = appointmentAttributes.hairdresser
         this.datetime = appointmentAttributes.datetime
-        Appointment.all.push(this)
+        //Appointment.push(this)
         //console.log(this);
     }
 
@@ -28,4 +28,6 @@ class Appointment {
     }
 }
 
-Appointment.all = []; // array of appointments
+ //Appointment.all = []; // array of appointments
+ 
+

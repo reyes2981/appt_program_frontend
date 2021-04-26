@@ -36,15 +36,12 @@ function createFormHandler(e) {
     const serviceId = parseInt(document.querySelector("#services").value)
     const hairdresserId = parseInt(document.querySelector("#hairdressers").value)
     const datetimeInput = document.querySelector("#datetime").value
-
-
     postAppointment(firstNameInput, lastNameInput, emailInput, serviceId, hairdresserId, datetimeInput)
 }
                 // ^ needs to match below
 function postAppointment(first_name, last_name, email, service_id, hairdresser_id, datetime) { // Going to hit CREATE method in backend API
     console.log(first_name, last_name, email, service_id, hairdresser_id, datetime)
     const bodyData = {first_name, last_name, email, service_id, hairdresser_id, datetime}
-
     fetch(endPoint, {
         method: "POST",
         headers: {"Content-Type": "application/json"}, 
@@ -57,16 +54,16 @@ function postAppointment(first_name, last_name, email, service_id, hairdresser_i
         let newAppointment = new Appointment(apptData, apptData.attributes)
         document.querySelector('#appointment-container').innerHTML += newAppointment.renderAppointmentCard()
 
-
     })
 }
 
-function myFunction() {
+function hideForm() {
     var x = document.querySelector(".form-container");
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
       x.style.display = "none";
     }
+
   }
 
