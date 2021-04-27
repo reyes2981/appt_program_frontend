@@ -2,23 +2,41 @@
 
 <html>
     <head>
-              <link rel="stylesheet" href="css/styles.css">
+         <link rel="stylesheet" href="css/styles.css">
+            <script>
+                jQuery(document).ready(function() {
+                $("#google-reviews").googlePlaces({
+                    placeId: '[PLACES_ID]',
+                     render: ['reviews'],
+                     min_rating: 5,
+                     max_rows: 0
+                    });
+                });
+            </script>
     </head>
     <body>
 
         <h1><strong>Cuts 4 Less</strong></h1>
 
+        <div id="notice"><h3>Face mask required!</h3></div>
+
+
         <div id="line"></div>
 
         <nav>
-        <p id="home-bttn"><a href="">Home</a></p>
+        <p id="home-bttn"><a href="/home.html">Home</a></p>
         <p id="appt-bttn"><a href="/">Schedule an Appointment</a></p>
         <p id="stylist-bttn"><a href="">Stylists</a></p>
         <p id="about-bttn"><a href="">About</a></p>
         </nav>
 
+       
 
-        <img src="81IFC+bYoiL._AC_SL1500_.jpg">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/google-places.js "></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=&#91;AIzaSyDTK9pL0xeEFh1m8oRB_7MVp7hPhREr8g4&#93;"></script>
+
 
            
             
