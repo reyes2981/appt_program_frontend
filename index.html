@@ -10,6 +10,14 @@
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
+
+        <h1><strong>Cuts 4 Less</strong></h1>
+
+        <img src="home.png" alt="Italian Trulli" id="home-vector">
+
+
+        <div id="line"></div>
+        
         <div class="form-container">
 
             <form id="create-appointment-form">
@@ -21,14 +29,14 @@
                 <br><br>
                 <input id="email" type="text" values="" placeholder="Email"> 
                 <br><br>
-                <p>Choose a Stylist </p>
+                <h3>Choose a Stylist </h3>
                 <select id="hairdressers" name="hairdressers">
                   <option value="1">Elsa</option>
                   <option value="2">Lucy</option>
                   <option value="3">Margarita</option>
                   <option value="4">Sia</option>
                 </select>
-                <p> Salon Menu </p>
+                <h3> Salon Menu </h3>
                 <select id="services" name="services">
                   <option value="1">Haircut</option>
                   <option value="2">Styling</option>
@@ -38,7 +46,10 @@
                   <option value="6">Other</option>
                 </select>
                 <br><br>
-                <input id="datetime" type="datetime" values="" placeholder="DATE/TIME"> 
+                
+                
+                <input type="datetime-local" id="datetime" name="datetime" value="">
+            
                 <br><br>
                 <input id='create-button' type="submit" name="submit" value="Schedule" class="submit" onclick="hideForm()">
             
@@ -49,7 +60,8 @@
         <div id="appointment-container">
         </div>
 
-
+           
+            
         <script type="text/javascript" src="src/index.js"></script> 
         <script type="text/javascript" src="src/appointment.js"></script> 
     </body>

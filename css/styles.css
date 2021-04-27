@@ -1,3 +1,67 @@
+
+
 body {
     text-align: center;
+    margin-top: 100px;
+    color: black;
+    background-color: white;
+    font-family:'Courier New', Courier, monospace;
+
 }
+
+h1 {
+    position: relative;
+    right: 555px;
+    top: -70px;
+    color: #f05945;
+    font-weight: bolder;
+}
+
+#home-vector {
+    width: 35px;
+    position: relative;
+    top: -120px;
+
+}
+
+#line {
+    border-bottom: 1px solid #aaa;
+    position: relative;
+    top: -100px;
+}
+
+.form-container {
+    position: relative;
+    top: -60px;
+}
+
+#first-name {
+    border-radius: 10px;
+
+}
+
+#last-name {
+    border-radius: 10px;
+
+}
+
+#email {
+    border-radius: 10px;
+
+}
+
+#hairdressers {
+    border-radius: 10px;
+
+}
+
+#services {
+    border-radius: 10px;
+
+}
+
+input[type="text"]::placeholder {    
+    text-align: center;
+}
+
+
