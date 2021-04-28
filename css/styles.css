@@ -3,13 +3,14 @@ body {
     margin-top: 100px;
     color: black;
     background-color: white;
-    font-family:'Courier New', Courier, monospace;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
 
+
 h1 {
     position: relative;
-    right: 520px;
+    right: 465px;
     top: -70px;
     color: #f05945;
     font-weight: bolder;
@@ -17,20 +18,24 @@ h1 {
 
 #notice {
     position: relative;
-    bottom: 100px;
+    bottom: 120px;
 }
 
 #line {
     border-bottom: 1px solid #aaa;
     position: relative;
-    top: -70px;
+    top: -120px;
 }
 
 nav {
     position: relative;
-    right: 525px;
-    top: -40px;
+    bottom: 100px;
+    padding: 5px;
+    width: 400px;
+    font-size: larger;
 }
+
+
 
 #home-bttn:hover {
     font-weight: bolder;
@@ -50,13 +55,17 @@ nav {
 
 a {
     text-decoration: none;
-    color: black;
+    color: #2ab7ca ;
 }
 
 .form-container {
     position: relative;
     top: -190px;
-    right: -150px;
+    left: 700px;
+    width: 400px;
+    background-color: blue;
+    color: #2ab7ca ;
+
 }
 
 #first-name {
