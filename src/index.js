@@ -7,9 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
   
 
   const createAppointmentForm = document.querySelector("#create-appointment-form")
-  createAppointmentForm.addEventListener("submit", (e) => createFormHandler(e)
+  createAppointmentForm.addEventListener("submit", (e) => createFormHandler(e) 
   )
 
+  const sendConfAlert = document.querySelector("#create-button")
+  sendConfAlert.addEventListener("submit", (e) => alert('Booked!')//provide an alert to the screen
+
+  )
 })
 
 /*function getAppointments() {

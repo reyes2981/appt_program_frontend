@@ -2,40 +2,40 @@ body {
     text-align: center;
     margin-top: 100px;
     color: black;
-    background-color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
 }
 
 
 h1 {
     position: relative;
+    bottom: 90px;
     right: 465px;
-    top: -70px;
     color: #f05945;
     font-weight: bolder;
+    font-size: 46px;
 }
 
 #notice {
     position: relative;
-    bottom: 120px;
+    top: 375px;
+    right: 455px;
+    color: black;
 }
 
 #line {
     border-bottom: 1px solid #aaa;
     position: relative;
-    top: -120px;
+    top: -150px;
 }
 
 nav {
     position: relative;
-    bottom: 100px;
     padding: 5px;
     width: 400px;
-    font-size: larger;
+    font-size: 23px;
+    color: black;
+    bottom: 75px;
 }
-
-
 
 #home-bttn:hover {
     font-weight: bolder;
@@ -53,19 +53,20 @@ nav {
     font-weight: bolder;
 }
 
+
 a {
     text-decoration: none;
-    color: #2ab7ca ;
+    color: black;
 }
+
 
 .form-container {
     position: relative;
-    top: -190px;
+    top: -395px;
     left: 700px;
     width: 400px;
-    background-color: blue;
-    color: #2ab7ca ;
-
+    font-size: 20px;
+    
 }
 
 #first-name {
@@ -95,6 +96,7 @@ a {
 
 input[type="text"]::placeholder {    
     text-align: center;
+    
 }
 
 img {
@@ -103,4 +105,13 @@ img {
     right: 500px;
 }
 
+#create-button {
+    width: 200px;
+    font-size: 19px;
+    border-radius: 50px;
+}
+
+#create-button:hover {
+    background-color: rgb(78, 94, 124);
+}
 
