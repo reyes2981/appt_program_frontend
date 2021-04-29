@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   )
 })
 
-/*function getAppointments() {
+function getAppointments() {
     fetch(endPoint)
     .then(response => response.json())
     // displays error in console .catch(err => console.log(err)) 
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
             //render(appointment)
         })
     })
-}*/
+}
 
 function createFormHandler(e) {
     e.preventDefault()
