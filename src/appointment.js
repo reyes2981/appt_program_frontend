@@ -30,4 +30,3 @@ class Appointment {
 
  //Appointment.all = []; // array of appointments
  
-

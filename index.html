@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="css\styles.css">
     </head>
     <body>
+   
 
         <h1><strong>Cuts 4 Less</strong></h1>
 
@@ -18,51 +19,17 @@
         <div id="line"></div>
 
         <nav>
-        <a id="home-bttn" href="">Home</a>
-        <a id="appt-bttn" href="">Schedule an Appointment</a>
-        <a id="stylist-bttn" href="">Stylists</a>
-        <a id="about-bttn" href="">About</a>
+        <button id="home-bttn" href="">Home</button>
+        <button id="toggleForm">Schedule an Appointment</button>
+        <button id="stylist-bttn" href="">Stylists</button>
+        <button id="about-bttn" href="">About</button>
         </nav>
 
        
-        <div class="form-container">
-
-            <form id="create-appointment-form">
-
-                <h3>Schedule an Appointment</h3>
-                <input id="first-name" type="text" values="" placeholder="First Name"> 
-                <br><br>
-                <input id="last-name" type="text" values="" placeholder="Last Name"> 
-                <br><br>
-                <input id="email" type="text" values="" placeholder="Email"> z
-                <br><br>
-                <p>Choose a Stylist </p>
-                <select id="hairdressers" name="hairdressers">
-                  <option value="1">Elsa</option>
-                  <option value="2">Lucy</option>
-                  <option value="3">Margarita</option>
-                  <option value="4">Sia</option>
-                </select>
-                <p> Salon Menu </p>
-                <select id="services" name="services">
-                  <option value="1">Haircut</option>
-                  <option value="2">Styling</option>
-                  <option value="3">Color</option>
-                  <option value="4">Waxing</option>
-                  <option value="5">Perm</option>
-                  <option value="6">Other</option>
-                </select>
-                <br><br>
-                
-                
-                <input type="datetime-local" id="datetime" name="datetime" value="">
-            
-                <br><br>
-                <input id='create-button' type="submit" name="submit" value="Schedule" class="submit" onclick="hideForm()">
-            
-            </form>
-
+        <div class="formContainer">
+         <h1>Form</h1>
         </div>
+            
 
         <div id="appointment-container">
         </div>

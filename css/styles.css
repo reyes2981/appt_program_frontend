@@ -3,32 +3,32 @@ body {
 }
 
 h1 {
-    text-align: left;
+    text-align: center;
     font-size: 35px;
+    position: relative;
 }
 
 nav {
     text-align: left;
     position: relative;
-    left: 75px;
-    background-color: rgb(240, 188, 188);
-    width: 200px;
+    left: 55px;
+    width: 350px;
 }
 
-a {
+button {
     display: block;
-    font-size: 22px;
-    text-decoration: none;
     line-height: 2.5em;
-    text-align: center;
-
+    border: none;
 }
 
+button:hover {
+    font-weight: bolder;
+}
 
 .form-container {
     position: relative;
     left: 450px;
-    bottom: 70px;
-    background-color: black;
+    bottom: 180px;
+    background-color: rgb(240, 188, 188);
     width: 400px;
 }

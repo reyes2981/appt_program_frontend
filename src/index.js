@@ -4,16 +4,22 @@ document.addEventListener("DOMContentLoaded", () => {
     // fetch & load appointments
     console.log("DOM Content Loaded")
     //getAppointments()
-  
 
-  const createAppointmentForm = document.querySelector("#create-appointment-form")
+  /*const createAppointmentForm = document.querySelector("#create-appointment-form")
   createAppointmentForm.addEventListener("submit", (e) => createFormHandler(e) 
-  )
 
-  const sendConfAlert = document.querySelector("#create-button")
-  sendConfAlert.addEventListener("submit", (e) => alert('Booked!')//provide an alert to the screen
+  )*/
+})
 
-  )
+const toggleForm = document.getElementById("toggleForm");
+const formDiv = document.querySelector(".formContainer");
+
+toggleForm.addEventListener("click", () => {
+    if (formDiv.style.display == 'block') {
+        formDiv.style.display = "none";
+    } else {
+        formDiv.style.display = 'block';
+    }
 })
 
 function getAppointments() {
