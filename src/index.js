@@ -7,16 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // fetch & load appointments
     console.log("DOM Content Loaded")
     getAppointments()
+    gethairdressers()
   /*const createAppointmentForm = document.querySelector("#create-appointment-form")
   createAppointmentForm.addEventListener("submit", (e) => createFormHandler(e) 
   )*/
 })
 
 
-
-toggleStylists.addEventListener('click', () => {
-    gethairdressers()
-})
 
 
 
@@ -40,8 +37,8 @@ function gethairdressers() {
     .then(hairdressers => {
         console.log(hairdressers)
         hairdressers.data.forEach(hairdresser => { // loop 
-            let newhairdresser = new Appointment(hairdresser, appointment.attributes)
-            document.querySelector('#hairdresser-container').innerHTML += newhairdresser.renderhairdresserCard()
+            let newhairdresser = new Hairdresser(hairdresser, hairdresser.attributes)
+            document.querySelector('#hairdresser-container').innerHTML += newhairdresser.renderHairdresserCard()
             //render(appointment)
         })
     })
@@ -78,6 +75,15 @@ function postAppointment(first_name, last_name, email, service_id, hairdresser_i
 
 function hideForm() {
     var x = document.querySelector(".formContainer");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+}
+
+function showHairdresser() {
+    var x = document.querySelector("#hairdresser-container");
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {

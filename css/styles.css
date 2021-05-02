@@ -33,3 +33,10 @@ button:hover {
     width: 400px;
 }
 
+#appointment-container {
+    display: none;
+}
+
+#hairdresser-container {
+    display: none;
+}
