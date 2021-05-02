@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    background: lightgray;
 }
 
 h1 {
@@ -25,11 +26,24 @@ button:hover {
     font-weight: bolder;
 }
 
+#create-appointment-form {
+    position: relative;
+    bottom: 70px;
+    background-color: lightseagreen;
+    width: 400px;
+    left: 440px;
+   
+}
+
 
 #appointment-container {
     display: none;
+    position: relative;
+    
 }
 
 #hairdresser-container {
     display: none;
+    position: relative;
+    bottom: 70px;
 }

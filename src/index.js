@@ -12,14 +12,15 @@ document.addEventListener("DOMContentLoaded", () => {
   )*/
 })
 
-
 function toggleForm() {
-var renderForm = document.getElementById("create-appointment-form")
-console.log(renderForm);
+    var x = document.querySelector("form#create-appointment-form");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+    console.log("hello from the toggleForm function");
 }
-
-
-
 
 function getAppointments() {
     fetch(endPoint)
@@ -76,10 +77,6 @@ function postAppointment(first_name, last_name, email, service_id, hairdresser_i
 
     })
 }
-
-
-
-
 
 function hideForm() {
     var x = document.querySelector("form#create-appointment-form");
