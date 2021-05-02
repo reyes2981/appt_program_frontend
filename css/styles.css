@@ -25,13 +25,6 @@ button:hover {
     font-weight: bolder;
 }
 
-#formContainer {
-    position: relative;
-    left: 450px;
-    bottom: 180px;
-    background-color: blue;
-    width: 400px;
-}
 
 #appointment-container {
     display: none;

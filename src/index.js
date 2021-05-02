@@ -1,5 +1,4 @@
 const endPoint = "http://localhost:3000/api/v1/appointments" // global variable
-const toggleForm = document.getElementById('#formContainer')
 const toggleStylists = document.getElementById('hairdresser-container')
 
 
@@ -13,6 +12,11 @@ document.addEventListener("DOMContentLoaded", () => {
   )*/
 })
 
+
+function toggleForm() {
+var renderForm = document.getElementById("create-appointment-form")
+console.log(renderForm);
+}
 
 
 
@@ -73,8 +77,12 @@ function postAppointment(first_name, last_name, email, service_id, hairdresser_i
     })
 }
 
+
+
+
+
 function hideForm() {
-    var x = document.querySelector(".formContainer");
+    var x = document.querySelector("form#create-appointment-form");
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
