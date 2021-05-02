@@ -25,10 +25,11 @@ button:hover {
     font-weight: bolder;
 }
 
-.form-container {
+#formContainer {
     position: relative;
     left: 450px;
     bottom: 180px;
-    background-color: rgb(240, 188, 188);
+    background-color: blue;
     width: 400px;
 }
+

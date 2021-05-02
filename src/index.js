@@ -1,37 +1,47 @@
 const endPoint = "http://localhost:3000/api/v1/appointments" // global variable
+const toggleForm = document.getElementById('#formContainer')
+const toggleStylists = document.getElementById('hairdresser-container')
+
 
 document.addEventListener("DOMContentLoaded", () => {
     // fetch & load appointments
     console.log("DOM Content Loaded")
-    //getAppointments()
-
+    getAppointments()
   /*const createAppointmentForm = document.querySelector("#create-appointment-form")
   createAppointmentForm.addEventListener("submit", (e) => createFormHandler(e) 
-
   )*/
 })
 
-const toggleForm = document.getElementById("toggleForm");
-const formDiv = document.querySelector(".formContainer");
 
-toggleForm.addEventListener("click", () => {
-    if (formDiv.style.display == 'block') {
-        formDiv.style.display = "none";
-    } else {
-        formDiv.style.display = 'block';
-    }
+
+toggleStylists.addEventListener('click', () => {
+    gethairdressers()
 })
+
+
 
 function getAppointments() {
     fetch(endPoint)
     .then(response => response.json())
-    // displays error in console .catch(err => console.log(err)) 
     .then(appointments => {
         console.log(appointments)
         appointments.data.forEach(appointment => { // loop 
 
             let newAppointment = new Appointment(appointment, appointment.attributes)
             document.querySelector('#appointment-container').innerHTML += newAppointment.renderAppointmentCard()
+            //render(appointment)
+        })
+    })
+}
+
+function gethairdressers() {
+    fetch('http://localhost:3000/api/v1/hairdressers')
+    .then(response => response.json())
+    .then(hairdressers => {
+        console.log(hairdressers)
+        hairdressers.data.forEach(hairdresser => { // loop 
+            let newhairdresser = new Appointment(hairdresser, appointment.attributes)
+            document.querySelector('#hairdresser-container').innerHTML += newhairdresser.renderhairdresserCard()
             //render(appointment)
         })
     })
@@ -67,7 +77,7 @@ function postAppointment(first_name, last_name, email, service_id, hairdresser_i
 }
 
 function hideForm() {
-    var x = document.querySelector(".form-container");
+    var x = document.querySelector(".formContainer");
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
