@@ -1,4 +1,5 @@
 const toggleStylists = document.getElementById('hairdresser-container')
+const endPoint = "http://localhost:3000/api/v1/appointments" 
 
 document.addEventListener("DOMContentLoaded", () => {
     // fetch & load appointments
@@ -31,7 +32,7 @@ function toggleAppts() {
 }
 
 function getAppointments() {
-    fetch('http://localhost:3000/api/v1/appointments')
+    fetch(endPoint)
     .then(response => response.json())
     .then(appointments => {
         console.log(appointments)
@@ -56,8 +57,8 @@ function getHairdressers() {
 
 function createFormHandler(e) {
     e.preventDefault()
-    const firstNameInput = document.querySelector("#first-name").value
-    const lastNameInput = document.querySelector("#last-name").value
+    const firstNameInput = document.querySelector("#firstName").value
+    const lastNameInput = document.querySelector("#lastName").value
     const emailInput = document.querySelector("#email").value
     const serviceId = parseInt(document.querySelector("#services").value)
     const hairdresserId = parseInt(document.querySelector("#hairdressers").value)
@@ -68,7 +69,7 @@ function createFormHandler(e) {
 function postAppointment(first_name, last_name, email, service_id, hairdresser_id, datetime) { // Going to hit CREATE method in backend API
     console.log(first_name, last_name, email, service_id, hairdresser_id, datetime)
     const bodyData = {first_name, last_name, email, service_id, hairdresser_id, datetime}
-    fetch('http://localhost:3000/api/v1/appointments', {
+    fetch(endPoint, {
             // POST request
         method: "POST",
         headers: {"Content-Type": "application/json"}, 

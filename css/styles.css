@@ -57,12 +57,15 @@ input {
 
 
 #appointment-container {
+    font-size: 18px;
     display: block;
     position: relative;
     color: lightseagreen;
-    bottom: 150px;
-    left: 400px;
+    bottom: 265px;
+    left: 550px;
     width: 300px;
+    border-style: dashed;
+    border-color: black;
 }
 
 #renderNewAppointment {
@@ -78,5 +81,14 @@ input {
     bottom: 140px;
     color: lightseagreen;
     width: 300px;
-    left: 375px;
+    left: 600px;
+    bottom: 269px;
+    font-size: 18px;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    bottom: 300px;
 }
