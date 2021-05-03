@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("DOM Content Loaded")
     getAppointments()
     getHairdressers()
+    
     const createAppointmentForm = document.querySelector("#create-appointment-form")
     createAppointmentForm.addEventListener("submit", (e) => createFormHandler(e))
 })
@@ -99,4 +100,17 @@ function showHairdresser() {
     } else {
       x.style.display = "none";
     }
+}
+
+// displays one view at a time
+
+function functionswap(newView, oldView) {
+    
+var newView = document.getElementById(newView),
+oldView = document.getElementById(oldView),
+viewWrapper = document.getElementById("viewWrapper");
+oldView.classList.remove("current-view");
+newView.classList.add("current-view");
+viewWrapper.appendChild(newView);
+
 }

@@ -38,7 +38,6 @@ button:hover {
     background-color: lightseagreen;
     width: 400px;
     left: 440px;
-   
 }
 
 
@@ -50,7 +49,9 @@ button:hover {
 
 #renderNewAppointment {
     color: lightseagreen;
-    display: none;
+    display: block;
+    position: relative;
+    bottom: 75px;
 }
 
 #hairdresser-container {
@@ -58,6 +59,6 @@ button:hover {
     position: relative;
     bottom: 140px;
     color: lightseagreen;
-    background-color: blue;
     width: 300px;
+    left: 375px;
 }
