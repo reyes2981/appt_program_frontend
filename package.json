@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "react-datepicker": "^3.8.0",
+    "simplepicker": "^2.0.3",
+    "smart-webcomponents": "^9.3.18",
+    "startbootstrap-agency": "^6.0.5"
+  }
+}

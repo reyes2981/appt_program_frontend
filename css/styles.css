@@ -1,0 +1,82 @@
+body {
+    text-align: center;
+    background: rgb(61, 58, 58);
+}
+
+h1 {
+    text-align: left;
+    font-size: 45px;
+    position: relative;
+    color: lightseagreen;
+    left: 55px;
+    font-weight: bold;
+}
+
+nav {
+    text-align: left;
+    position: relative;
+    left: 55px;
+    top: 50px;
+    width: 350px;
+    font-size: 18px;
+}
+
+button {
+    display: block;
+    line-height: 2.5em;
+    border: none;
+    font-size: 18px;
+    color: lightseagreen;
+    background-color: rgb(61, 58, 58);
+}
+
+button:hover {
+    font-weight: bolder;
+}
+
+#admin-appt-bttn {
+}
+
+#create-appointment-form {
+    display: none;
+    position: relative;
+    bottom: 335px;
+    background-color: lightseagreen;
+    width: 500px;
+    left: 580px;
+    opacity: 80%;
+    filter: brightness(125%);
+    border-radius: 15%;
+    height: 475px;
+    font-size: 20px;
+}
+
+input {
+    text-align: center;
+}
+
+
+#appointment-container {
+    display: block;
+    position: relative;
+    color: lightseagreen;
+    bottom: 150px;
+    left: 400px;
+    width: 300px;
+}
+
+#renderNewAppointment {
+    color: lightseagreen;
+    display: block;
+    position: relative;
+    bottom: 75px;
+}
+
+#hairdresser-container {
+    display: none;
+    position: relative;
+    bottom: 140px;
+    color: lightseagreen;
+    width: 300px;
+    left: 375px;
+}
