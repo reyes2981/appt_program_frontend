@@ -1,14 +1,11 @@
- // global variable
 const toggleStylists = document.getElementById('hairdresser-container')
-
 
 document.addEventListener("DOMContentLoaded", () => {
     // fetch & load appointments
     console.log("DOM Content Loaded")
     getAppointments()
     getHairdressers()
-
-    const createAppointmentForm = document.querySelector("#create-button")
+    const createAppointmentForm = document.querySelector("#create-appointment-form")
     createAppointmentForm.addEventListener("submit", (e) => createFormHandler(e))
 })
 
@@ -60,7 +57,8 @@ function createFormHandler(e) {
 function postAppointment(first_name, last_name, email, service_id, hairdresser_id, datetime) { // Going to hit CREATE method in backend API
     console.log(first_name, last_name, email, service_id, hairdresser_id, datetime)
     const bodyData = {first_name, last_name, email, service_id, hairdresser_id, datetime}
-    fetch(endPoint, {
+    fetch('http://localhost:3000/api/v1/appointments', {
+            // POST request
         method: "POST",
         headers: {"Content-Type": "application/json"}, 
         body: JSON.stringify(bodyData)
@@ -69,6 +67,7 @@ function postAppointment(first_name, last_name, email, service_id, hairdresser_i
     .then(appointment => {
         console.log(appointment); 
         const apptData = appointment.data
+            // render JSON response
         let newAppointment = new Appointment(apptData, apptData.attributes)
         document.querySelector('#appointment-container').innerHTML += newAppointment.renderAppointmentCard()
     })

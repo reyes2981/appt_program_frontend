@@ -25,4 +25,4 @@ class Appointment {
 
 }
 
-Appointment.all = [];
+// Appointment.all = [];
