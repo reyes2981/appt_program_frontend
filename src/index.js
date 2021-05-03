@@ -19,6 +19,16 @@ function toggleForm() {
     console.log("hello from the toggleForm function");
 }
 
+function toggleAppts() {
+    var x = document.querySelector("#appointment-container");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+    console.log("hello from the toggleAppts function");
+}
+
 function getAppointments() {
     fetch('http://localhost:3000/api/v1/appointments')
     .then(response => response.json())
@@ -69,7 +79,7 @@ function postAppointment(first_name, last_name, email, service_id, hairdresser_i
         const apptData = appointment.data
             // render JSON response
         let newAppointment = new Appointment(apptData, apptData.attributes)
-        document.querySelector('#appointment-container').innerHTML += newAppointment.renderAppointmentCard()
+        document.querySelector('#renderNewAppointment').innerHTML += newAppointment.renderAppointmentCard()
     })
 }
 
@@ -89,5 +99,4 @@ function showHairdresser() {
     } else {
       x.style.display = "none";
     }
-
 }

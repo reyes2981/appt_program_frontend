@@ -22,6 +22,9 @@
         <button id="toggleForm" Onclick="toggleForm()">Schedule an Appointment</button>
         <button id="stylist-bttn" Onclick="showHairdresser()">Stylists</button>
         <button id="about-bttn" href="">About</button>
+
+         <p style="color: lightseagreen;">Admin Tools</p>
+        <button id="admin-appt-bttn" Onclick="toggleAppts()">View Appointments</button>
         </nav>
 
             <div class="form-container">
@@ -31,7 +34,7 @@
                     <br><br>
                     <input id="last-name" type="text" values="" placeholder="Last Name"> 
                     <br><br>
-                    <input id="email" type="text" values="" placeholder="Email"> z
+                    <input id="email" type="text" values="" placeholder="Email"> 
                     <br><br>
                     <p>Choose a Stylist </p>
                     <select id="hairdressers" name="hairdressers">
@@ -58,6 +61,9 @@
 
         <div id="appointment-container">
         </div>
+
+    <div id="renderNewAppointment">
+    </div>
 
         <div id="hairdresser-container">
             <h3>Meet The Team!</h3> 
