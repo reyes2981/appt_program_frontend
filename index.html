@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html>
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,12 +10,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css\styles.css">
     </head>
+
     <body>
    
-
         <h1><strong>Cuts 4 Less</strong></h1>
-
-
 
         <div id="line"></div>
 
@@ -25,55 +24,50 @@
         <button id="about-bttn" href="">About</button>
         </nav>
 
-        <div id="form-container">
-            <form id="create-appointment-form">
-
-                <h3>Schedule an Appointment</h3>
-                <input id="first-name" type="text" values="" placeholder="First Name"> 
-                <br><br>
-                <input id="last-name" type="text" values="" placeholder="Last Name"> 
-                <br><br>
-                <input id="email" type="text" values="" placeholder="Email"> z
-                <br><br>
-                <p>Choose a Stylist </p>
-                <select id="hairdressers" name="hairdressers">
-                  <option value="1">Elsa</option>
-                  <option value="2">Lucy</option>
-                  <option value="3">Margarita</option>
-                  <option value="4">Sia</option>
-                </select>
-                <p> Salon Menu </p>
-                <select id="services" name="services">
-                  <option value="1">Haircut</option>
-                  <option value="2">Styling</option>
-                  <option value="3">Color</option>
-                  <option value="4">Waxing</option>
-                  <option value="5">Perm</option>
-                  <option value="6">Other</option>
-                </select>
-                <br><br>
-                <input type="datetime-local" id="datetime" name="datetime" value="">
-                <br><br>
-                <input id='create-button' type="submit" name="submit" value="Schedule" class="submit" onclick="hideForm()">
-</form>
-        </div>
-
+        <section class="jumbotron text-center">
+            <div class="form-container">
+                <form id="create-appointment-form">
+                    <h3>Schedule an Appointment</h3>
+                    <input id="first-name" type="text" values="" placeholder="First Name"> 
+                    <br><br>
+                    <input id="last-name" type="text" values="" placeholder="Last Name"> 
+                    <br><br>
+                    <input id="email" type="text" values="" placeholder="Email"> z
+                    <br><br>
+                    <p>Choose a Stylist </p>
+                    <select id="hairdressers" name="hairdressers">
+                    <option value="1">Elsa</option>
+                    <option value="2">Lucy</option>
+                    <option value="3">Margarita</option>
+                    <option value="4">Sia</option>
+                    </select>
+                    <p> Salon Menu </p>
+                    <select id="services" name="services">
+                    <option value="1">Haircut</option>
+                    <option value="2">Styling</option>
+                    <option value="3">Color</option>
+                    <option value="4">Waxing</option>
+                    <option value="5">Perm</option>
+                    <option value="6">Other</option>
+                    </select>
+                    <br><br>
+                    <input type="datetime-local" id="datetime" name="datetime" value="">
+                    <br><br>
+                    <input id='create-button' type="submit" name="submit" value="Schedule" class="submit" onClick="hideForm()">
+                </form>
+            </div>
+        </section>
+        
         <div id="appointment-container">
         </div>
 
         <div id="hairdresser-container">
             <h3>Meet The Team!</h3> 
         </div>
-
-        
-
-           
      
         <script type="text/javascript" src="src/index.js"></script> 
         <script type="text/javascript" src="src/appointment.js"></script>
         <script type="text/javascript" src="src/hairdresser.js"></script>
-
-        
 
     </body>
 </html>

@@ -1,4 +1,4 @@
-const endPoint = "http://localhost:3000/api/v1/appointments" // global variable
+ // global variable
 const toggleStylists = document.getElementById('hairdresser-container')
 
 
@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // fetch & load appointments
     console.log("DOM Content Loaded")
     getAppointments()
-    gethairdressers()
-  /*const createAppointmentForm = document.querySelector("#create-appointment-form")
-  createAppointmentForm.addEventListener("submit", (e) => createFormHandler(e) 
-  )*/
+    getHairdressers()
+
+    const createAppointmentForm = document.querySelector("#create-button")
+    createAppointmentForm.addEventListener("submit", (e) => createFormHandler(e))
 })
 
 function toggleForm() {
@@ -23,20 +23,18 @@ function toggleForm() {
 }
 
 function getAppointments() {
-    fetch(endPoint)
+    fetch('http://localhost:3000/api/v1/appointments')
     .then(response => response.json())
     .then(appointments => {
         console.log(appointments)
         appointments.data.forEach(appointment => { // loop 
-
             let newAppointment = new Appointment(appointment, appointment.attributes)
             document.querySelector('#appointment-container').innerHTML += newAppointment.renderAppointmentCard()
-            //render(appointment)
         })
     })
 }
 
-function gethairdressers() {
+function getHairdressers() {
     fetch('http://localhost:3000/api/v1/hairdressers')
     .then(response => response.json())
     .then(hairdressers => {
@@ -44,7 +42,6 @@ function gethairdressers() {
         hairdressers.data.forEach(hairdresser => { // loop 
             let newhairdresser = new Hairdresser(hairdresser, hairdresser.attributes)
             document.querySelector('#hairdresser-container').innerHTML += newhairdresser.renderHairdresserCard()
-            //render(appointment)
         })
     })
 }
@@ -74,7 +71,6 @@ function postAppointment(first_name, last_name, email, service_id, hairdresser_i
         const apptData = appointment.data
         let newAppointment = new Appointment(apptData, apptData.attributes)
         document.querySelector('#appointment-container').innerHTML += newAppointment.renderAppointmentCard()
-
     })
 }
 
@@ -94,5 +90,5 @@ function showHairdresser() {
     } else {
       x.style.display = "none";
     }
-}
 
+}

@@ -1,12 +1,13 @@
 body {
     text-align: center;
-    background: lightgray;
+    background: black;
 }
 
 h1 {
     text-align: center;
     font-size: 35px;
     position: relative;
+    color: lightseagreen;
 }
 
 nav {
@@ -27,6 +28,7 @@ button:hover {
 }
 
 #create-appointment-form {
+    display: none;
     position: relative;
     bottom: 70px;
     background-color: lightseagreen;
@@ -37,8 +39,9 @@ button:hover {
 
 
 #appointment-container {
-    display: none;
+    display: block;
     position: relative;
+    color: lightseagreen;
     
 }
 
@@ -46,4 +49,5 @@ button:hover {
     display: none;
     position: relative;
     bottom: 70px;
+    color: lightseagreen;
 }
