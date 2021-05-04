@@ -55,7 +55,6 @@ input {
     text-align: center;
 }
 
-
 #appointment-container {
     font-size: 18px;
     display: block;
@@ -75,7 +74,7 @@ input {
     bottom: 105px;
 }
 
-#hairdresser-container {
+#hairdresserContainer {
     display: none;
     position: relative;
     bottom: 140px;
