@@ -1,3 +1,5 @@
+// global variables
+
 const toggleStylists = document.getElementById('hairdresser-container')
 const endPoint = "http://localhost:3000/api/v1/appointments" 
 
@@ -103,15 +105,8 @@ function showHairdresser() {
     }
 }
 
-// displays one view at a time
+// destroys instance of appointment
 
-function functionswap(newView, oldView) {
-    
-var newView = document.getElementById(newView),
-oldView = document.getElementById(oldView),
-viewWrapper = document.getElementById("viewWrapper");
-oldView.classList.remove("current-view");
-newView.classList.add("current-view");
-viewWrapper.appendChild(newView);
-
+function removeAppt() {
+  console.log("greetings from removeAppt");
 }

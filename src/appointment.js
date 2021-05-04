@@ -10,6 +10,8 @@ class Appointment {
         this.datetime = appointmentAttributes.datetime
     }
 
+
+
     renderAppointmentCard() {  // render function 
               return `
               <div data-id=${this.id}>
@@ -19,10 +21,20 @@ class Appointment {
               <p>${this.hairdresser.first_name}</p>
               <p>${this.service.name}</p>
               <p>${this.datetime}</p>
-             </div>
-              <br><br>`;
+              <button onClick="removeAppt()" class="delete-appt-button">Delete Appointment</button>
+              </div>
+              <br><br>
+
+              `;
+
+              
+
     }
 
+
 }
+
+
+
 
 // Appointment.all = [];
