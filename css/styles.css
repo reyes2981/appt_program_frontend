@@ -60,6 +60,11 @@ input {
     color: lightseagreen;
 }
 
+#service {
+    width: 177px;
+    color: lightseagreen;
+}
+
 .form-inputs {
     background-color: rgb(61, 58, 58);
     color: lightseagreen;

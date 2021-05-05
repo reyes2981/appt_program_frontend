@@ -2,7 +2,8 @@
 const toggleStylists = document.getElementById('hairdresser-container');
 const endPoint = "http://localhost:3000/api/v1/appointments";
 const selectApptBttn = document.getElementById("toggleForm");
-const hdEndPoint = "http://localhost:3000/api/v1/hairdressers"
+const hdEndPoint = "http://localhost:3000/api/v1/hairdressers";
+const serviceEndPoint = "http://localhost:3000/api/v1/services";
 
 document.addEventListener("DOMContentLoaded", () => {
     // fetch & load appointments
@@ -14,7 +15,6 @@ selectApptBttn.addEventListener("click", () => {
     
     // fetch & load appointments
     create_form();
-    //getAppointments();
 })
 
 
@@ -50,13 +50,20 @@ function create_form() {
 
   const HD = document.createElement("select");
   HD.setAttribute("type", "select");
-  HD.setAttribute("name", "");
+  HD.setAttribute("name", "Stylists");
   HD.setAttribute("id", "hairdresser");
   HD.setAttribute("class", "form-inputs");
-  HD.setAttribute("placeholder", "Stylists");
+  HD.setAttribute("value", "");
 
+  const SERVICE = document.createElement("select");
+  SERVICE.setAttribute("type", "select");
+  SERVICE.setAttribute("name", "services");
+  SERVICE.setAttribute("id", "service");
+  SERVICE.setAttribute("class", "form-inputs");
+  SERVICE.setAttribute("value", "");
 
-
+  
+  
   const SUBMIT = document.createElement("input");
   SUBMIT.setAttribute("class", "form-inputs");
   SUBMIT.setAttribute("type", "button");
@@ -68,6 +75,7 @@ function create_form() {
   form.append(LN); 
   form.append(EMAIL); 
   form.append(HD); 
+  form.append(SERVICE); 
   form.append(SUBMIT); // Append the button to the form
   
   document.getElementById("form-container").appendChild(form);
@@ -80,47 +88,68 @@ function create_form() {
   let apptmtButton = selectApptBttn;
   apptmtButton.disabled = true;
 
-  HD.addEventListener("click", () => {
-    
+  HD.addEventListener("click", (e) => {
+    e.preventDefault();
     // fetch & load appointments
-    getData();
+    getHdData();
+    getServices();
     //getAppointments();
-})
+  })
 
 
-  async function getData() {
-    await fetch(hdEndPoint)
-      .then((response) => {
-        return response.json()
-      })
-      .then((data) => {
-        console.log('fetch finished');
-      console.log(data);
+  const hdData = fetch(hdEndPoint, {
+    // POST request
+    method: "GET",
+    headers: {"Content-Type": "application/json"}, 
+    }) 
+  .then(response => response.json()) 
+  .then(appointment => {
+    console.log(appointment);
+
     
-      })
+    });     
+  }
+
+  function getHdData() {   
+    var options = "";
+
+    document.getElementById("hairdresser").innerHTML = options;
     
-    };
-}
+  }
 
+  const serviceData = fetch(serviceEndPoint, {
+    // POST request
+    method: "GET",
+    headers: {"Content-Type": "application/json"}, 
+    }) 
+  .then(response => response.json()) 
+  .then(service => {
+    console.log(service);
 
+    
+    });     
+  
 
- 
-/* let newhairdresser = new Hairdresser(hairdresser, hairdresser.attributes)
-  document.querySelector('#hairdresser').innerHTML += newhairdresser//.renderHairdresserCard()
-  console.log("hello from getHairdressers()")
-  console.log(options);*/
+  function getServiceData() {   
+    var options = "";
 
-/*function getAppointments() {
-    fetch(endPoint)
-    .then(response => response.json())
-    .then(appointments => {
-        console.log(appointments)
-        appointments.data.forEach(appointment => { // loop 
-            let newAppointment = new Appointment(appointment, appointment.attributes)
-            document.querySelector('#appointment-container').innerHTML += newAppointment.renderAppointmentCard()
-        })
-    })
-}*/
+    document.getElementById("service").innerHTML = options;
+    
+  }
+/* fetch(endPoint, {
+            // POST request
+        method: "POST",
+        headers: {"Content-Type": "application/json"}, 
+        body: JSON.stringify(bodyData)
+    }) 
+    .then(response => response.json()) 
+    .then(appointment => {
+        console.log(appointment); 
+        const apptData = appointment.data
+            // render JSON response
+        let newAppointment = new Appointment(apptData, apptData.attributes)
+        document.querySelector('#renderNewAppointment').innerHTML += newAppointment.renderAppointmentCard()
+    })*/
 
 function createFormHandler(e) {
     e.preventDefault()
