@@ -6,17 +6,6 @@ class Hairdresser {
         console.log(this);
     }
 
-    static getHairdressers() {
-        fetch('http://localhost:3000/api/v1/hairdressers')
-        .then(response => response.json())
-        .then(hairdressers => {
-            console.log(hairdressers)
-            hairdressers.data.forEach(hairdresser => { // loop 
-                let newhairdresser = new Hairdresser(hairdresser, hairdresser.attributes)
-                document.querySelector('#hairdresser-container').innerHTML += newhairdresser.renderHairdresserCard()
-            })
-        })
-    }
 
     renderHairdresserCard() {  // render function 
         return `

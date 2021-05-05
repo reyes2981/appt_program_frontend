@@ -1,6 +1,6 @@
 // global variables
-const toggleStylists = document.getElementById('hairdresser-container')
-const endPoint = "http://localhost:3000/api/v1/appointments" 
+const toggleStylists = document.getElementById('hairdresser-container');
+const endPoint = "http://localhost:3000/api/v1/appointments";
 const selectApptBttn = document.getElementById("toggleForm");
 
 
@@ -18,6 +18,10 @@ selectApptBttn.addEventListener("click", () => {
 
 function create_form() {
   // Create a form synamically
+  const newOption = document.createElement('option');
+  const optionText = document.createTextNode('Option Text');
+  
+
   const form = document.createElement("form");
   form.setAttribute("method", "post");
   form.setAttribute("action", "submit.php");
@@ -45,10 +49,11 @@ function create_form() {
   EMAIL.setAttribute("placeholder", "Email");
 
   const HD = document.createElement("select");
-  HD.setAttribute("type", "option");
+  HD.setAttribute("type", "select");
   HD.setAttribute("name", "hairdresser");
   HD.setAttribute("id", "hairdresser");
   HD.setAttribute("class", "form-inputs");
+  HD.setAttribute("placeholder", "Stylists");
 
   const SUBMIT = document.createElement("input");
   SUBMIT.setAttribute("class", "form-inputs");
@@ -60,13 +65,43 @@ function create_form() {
   form.append(LN); 
   form.append(EMAIL); 
   form.append(HD); 
-                
+
                 // Append the button to the form
   form.append(SUBMIT); 
   
   document.getElementById("form-container").appendChild(form);
 
   console.log("hello from create_form");
+
+  HD.addEventListener("click", () => {
+    // fetch & load appointments
+    console.log("Hello from the hairdresser select box");
+    getHairdressers()
+  })
+
+  function getHairdressers() {
+    const options = [
+      {name: "Elsa", id: "1"},
+      {name: "Elsa", id: "1"},
+      {name: "Elsa", id: "1"},
+      {name: "Elsa", id: "1"}
+    ];
+    fetch('http://localhost:3000/api/v1/hairdressers')
+    .then(response => response.json())
+    .then(hairdressers => {
+        console.log(hairdressers)
+        hairdressers.data.forEach(hairdresser => { // loop 
+            let newhairdresser = new Hairdresser(hairdresser, hairdresser.attributes)
+            document.querySelector('#hairdresser').innerHTML += newhairdresser//.renderHairdresserCard()
+            console.log("hello from getHairdressers()")
+            console.log(options);
+    
+          })
+          
+    })
+  }
+  
+
 }
 
 

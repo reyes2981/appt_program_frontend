@@ -57,6 +57,7 @@ input {
 
 #hairdresser {
     width: 177px;
+    color: lightseagreen;
 }
 
 .form-inputs {
@@ -91,7 +92,7 @@ input {
     bottom: 105px;
 }
 
-#hairdresserContainer {
+/*#hairdresserContainer {
     display: none;
     position: relative;
     bottom: 140px;
@@ -101,6 +102,7 @@ input {
     bottom: 269px;
     font-size: 18px;
 }
+*/
 
 img {
     width: 200px;
