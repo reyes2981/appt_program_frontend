@@ -12,15 +12,16 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 selectApptBttn.addEventListener("click", () => {
+    
     // fetch & load appointments
     create_form();
     //getAppointments();
 })
 
-function create_form() {
+function create_form(e) {
+
   // Create a form synamically
   const newOption = document.createElement('option');
-  const optionText = document.createTextNode('Option Text');
   
 
   const form = document.createElement("form");
@@ -51,16 +52,18 @@ function create_form() {
 
   const HD = document.createElement("select");
   HD.setAttribute("type", "select");
-  HD.setAttribute("name", "hairdresser");
+  HD.setAttribute("name", "");
   HD.setAttribute("id", "hairdresser");
   HD.setAttribute("class", "form-inputs");
   HD.setAttribute("placeholder", "Stylists");
 
+
   const SUBMIT = document.createElement("input");
   SUBMIT.setAttribute("class", "form-inputs");
-  SUBMIT.setAttribute("type", "submit");
+  SUBMIT.setAttribute("type", "button");
+  SUBMIT.setAttribute("id", "submit");
   SUBMIT.setAttribute("value", "Submit");
-  
+
                 // Append the email_ID input to the form
   form.append(FN); 
   form.append(LN); 
@@ -69,6 +72,7 @@ function create_form() {
 
                 // Append the button to the form
   form.append(SUBMIT); 
+
   
   document.getElementById("form-container").appendChild(form);
 
@@ -79,24 +83,34 @@ function create_form() {
     getHairdressers()
   })
 
-  function getHairdressers() {
-
-    fetch(HdEndpoint)
-      .then(response => response.json())
-      .then(hairdressers => {
-        console.log(hairdressers);
-     
-
-    })
-    
-  }
-
-
-
-  
+  // disales apptmtButton after it has been clicked
+  let apptmtButton = selectApptBttn;
+  apptmtButton.disabled = true;
 }
 
 
+
+
+function getHairdressers() {
+
+  fetch(HdEndpoint)
+    .then(response => response.json())
+    .then(hairdressers => {
+      console.log(hairdressers);
+      
+      var dropdown = document.getElementById("hairdresser");
+
+    for (var i = 0; i < hairdressers.data.length; i++) {
+      var option = document.createElement("option");
+    option.text = hairdressers.data[i];
+    option.value = hairdressers.data[i];
+    dropdown.add(option);
+}
+
+
+  })
+  
+}
 
 
 
