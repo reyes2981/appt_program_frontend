@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background: rgb(61, 58, 58);
+    background-color: rgb(61, 58, 58);
 }
 
 h1 {
@@ -55,7 +55,21 @@ input {
     text-align: center;
 }
 
-#appointment-container {
+#hairdresser {
+    width: 177px;
+}
+
+.form-inputs {
+    background-color: rgb(61, 58, 58);
+    color: lightseagreen;
+    text-align: center;
+}
+
+::placeholder {
+    color: lightseagreen;
+}
+
+#form-container {
     font-size: 18px;
     display: block;
     position: relative;
@@ -63,8 +77,11 @@ input {
     bottom: 265px;
     left: 550px;
     width: 300px;
-    border-style: dashed;
-    border-color: black;
+}
+
+.form-inputs {
+    display: block;
+    text-align: center;
 }
 
 #renderNewAppointment {

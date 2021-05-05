@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // fetch & load appointments
     console.log("DOM Content Loaded");
     //getAppointments();
-
 })
 
 selectApptBttn.addEventListener("click", () => {
@@ -22,24 +21,50 @@ function create_form() {
   const form = document.createElement("form");
   form.setAttribute("method", "post");
   form.setAttribute("action", "submit.php");
+  form.setAttribute("class", "form-inputs");
 
   const FN = document.createElement("input");
   FN.setAttribute("type", "text");
-  FN.setAttribute("name", "FirstName");
-  FN.setAttribute("id", "FirstName");
-  FN.setAttribute("placeholder", "FirstName");
+  FN.setAttribute("name", "firstName");
+  FN.setAttribute("id", "firstName");
+  FN.setAttribute("class", "form-inputs");
+  FN.setAttribute("placeholder", "First Name");
 
-  const submit = document.createElement("input");
-  submit.setAttribute("type", "submit");
-  submit.setAttribute("value", "Submit");
+  const LN = document.createElement("input");
+  LN.setAttribute("type", "text");
+  LN.setAttribute("name", "lastName");
+  LN.setAttribute("id", "LastName");
+  LN.setAttribute("class", "form-inputs");
+  LN.setAttribute("placeholder", "Last Name");
+
+  const EMAIL = document.createElement("input");
+  EMAIL.setAttribute("type", "text");
+  EMAIL.setAttribute("name", "email");
+  EMAIL.setAttribute("id", "email");
+  EMAIL.setAttribute("class", "form-inputs");
+  EMAIL.setAttribute("placeholder", "Email");
+
+  const HD = document.createElement("select");
+  HD.setAttribute("type", "option");
+  HD.setAttribute("name", "hairdresser");
+  HD.setAttribute("id", "hairdresser");
+  HD.setAttribute("class", "form-inputs");
+
+  const SUBMIT = document.createElement("input");
+  SUBMIT.setAttribute("class", "form-inputs");
+  SUBMIT.setAttribute("type", "submit");
+  SUBMIT.setAttribute("value", "Submit");
   
                 // Append the email_ID input to the form
   form.append(FN); 
+  form.append(LN); 
+  form.append(EMAIL); 
+  form.append(HD); 
                 
                 // Append the button to the form
-  form.append(submit); 
+  form.append(SUBMIT); 
   
-  document.getElementsByTagName("body")[0].appendChild(form);
+  document.getElementById("form-container").appendChild(form);
 
   console.log("hello from create_form");
 }
