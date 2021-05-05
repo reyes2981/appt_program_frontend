@@ -2,6 +2,7 @@
 const toggleStylists = document.getElementById('hairdresser-container');
 const endPoint = "http://localhost:3000/api/v1/appointments";
 const selectApptBttn = document.getElementById("toggleForm");
+const HdEndpoint = "http://localhost:3000/api/v1/hairdressers"
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -74,33 +75,25 @@ function create_form() {
   console.log("hello from create_form");
 
   HD.addEventListener("click", () => {
-    // fetch & load appointments
     console.log("Hello from the hairdresser select box");
     getHairdressers()
   })
 
   function getHairdressers() {
 
-    fetch('http://localhost:3000/api/v1/hairdressers')
+    fetch(HdEndpoint)
       .then(response => response.json())
       .then(hairdressers => {
-       console.log(hairdressers);
-       console.log("hello from getHairdressers()");
-
-       let output = '<>Stylists</p>';
-       output += '<option>';
-       hairdressers.data.forEach(hairdresser => { // loop 
-        output += `
-        <option>
-            ${hairdresser.attributes.first_name}
-        </option>`;
-
-        })
-        output += '</option>'
-        document.getElementById("hairdresser").innerHTML = output;
+        console.log(hairdressers);
+     
 
     })
+    
   }
+
+
+
+  
 }
 
 
