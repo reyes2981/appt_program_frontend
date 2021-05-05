@@ -80,34 +80,37 @@ function create_form() {
   })
 
   function getHairdressers() {
-    const options = [
-      {name: "Elsa", id: "1"},
-      {name: "Elsa", id: "1"},
-      {name: "Elsa", id: "1"},
-      {name: "Elsa", id: "1"}
-    ];
+
     fetch('http://localhost:3000/api/v1/hairdressers')
-    .then(response => response.json())
-    .then(hairdressers => {
-        console.log(hairdressers)
-        hairdressers.data.forEach(hairdresser => { // loop 
-            let newhairdresser = new Hairdresser(hairdresser, hairdresser.attributes)
-            document.querySelector('#hairdresser').innerHTML += newhairdresser//.renderHairdresserCard()
-            console.log("hello from getHairdressers()")
-            console.log(options);
-    
-          })
-          
+      .then(response => response.json())
+      .then(hairdressers => {
+       console.log(hairdressers);
+       console.log("hello from getHairdressers()");
+
+       let output = '<>Stylists</p>';
+       output += '<option>';
+       hairdressers.data.forEach(hairdresser => { // loop 
+        output += `
+        <option>
+            ${hairdresser.attributes.first_name}
+        </option>`;
+
+        })
+        output += '</option>'
+        document.getElementById("hairdresser").innerHTML = output;
+
     })
   }
-  
-
 }
 
 
 
 
 
+/* let newhairdresser = new Hairdresser(hairdresser, hairdresser.attributes)
+  document.querySelector('#hairdresser').innerHTML += newhairdresser//.renderHairdresserCard()
+  console.log("hello from getHairdressers()")
+  console.log(options);*/
 
 
 /*function toggleForm() {
