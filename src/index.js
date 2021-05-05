@@ -2,8 +2,7 @@
 const toggleStylists = document.getElementById('hairdresser-container');
 const endPoint = "http://localhost:3000/api/v1/appointments";
 const selectApptBttn = document.getElementById("toggleForm");
-const HdEndpoint = "http://localhost:3000/api/v1/hairdressers"
-
+const hdEndPoint = "http://localhost:3000/api/v1/hairdressers"
 
 document.addEventListener("DOMContentLoaded", () => {
     // fetch & load appointments
@@ -18,11 +17,10 @@ selectApptBttn.addEventListener("click", () => {
     //getAppointments();
 })
 
-function create_form(e) {
 
+function create_form() {
   // Create a form synamically
-  const newOption = document.createElement('option');
-  
+  const newOption = document.createElement('option');  
 
   const form = document.createElement("form");
   form.setAttribute("method", "post");
@@ -58,87 +56,59 @@ function create_form(e) {
   HD.setAttribute("placeholder", "Stylists");
 
 
+
   const SUBMIT = document.createElement("input");
   SUBMIT.setAttribute("class", "form-inputs");
   SUBMIT.setAttribute("type", "button");
   SUBMIT.setAttribute("id", "submit");
   SUBMIT.setAttribute("value", "Submit");
 
-                // Append the email_ID input to the form
+                
   form.append(FN); 
   form.append(LN); 
   form.append(EMAIL); 
   form.append(HD); 
-
-                // Append the button to the form
-  form.append(SUBMIT); 
-
+  form.append(SUBMIT); // Append the button to the form
   
   document.getElementById("form-container").appendChild(form);
+ // getHairdressers();
 
   console.log("hello from create_form");
 
-  HD.addEventListener("click", () => {
-    console.log("Hello from the hairdresser select box");
-    getHairdressers()
-  })
 
   // disales apptmtButton after it has been clicked
   let apptmtButton = selectApptBttn;
   apptmtButton.disabled = true;
+
+  HD.addEventListener("click", () => {
+    
+    // fetch & load appointments
+    getData();
+    //getAppointments();
+})
+
+
+  async function getData() {
+    await fetch(hdEndPoint)
+      .then((response) => {
+        return response.json()
+      })
+      .then((data) => {
+        console.log('fetch finished');
+      console.log(data);
+    
+      })
+    
+    };
 }
 
 
 
-
-function getHairdressers() {
-
-  fetch(HdEndpoint)
-    .then(response => response.json())
-    .then(hairdressers => {
-      console.log(hairdressers);
-      
-      var dropdown = document.getElementById("hairdresser");
-
-    for (var i = 0; i < hairdressers.data.length; i++) {
-      var option = document.createElement("option");
-    option.text = hairdressers.data[i];
-    option.value = hairdressers.data[i];
-    dropdown.add(option);
-}
-
-
-  })
-  
-}
-
-
-
+ 
 /* let newhairdresser = new Hairdresser(hairdresser, hairdresser.attributes)
   document.querySelector('#hairdresser').innerHTML += newhairdresser//.renderHairdresserCard()
   console.log("hello from getHairdressers()")
   console.log(options);*/
-
-
-/*function toggleForm() {
-    var x = document.querySelector("form#create-appointment-form");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-    console.log("hello from the toggleForm function");
-}*/
-
-/*function toggleAppts() {
-    var x = document.querySelector("#appointment-container");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-    console.log("hello from the toggleAppts function");
-}*/
 
 /*function getAppointments() {
     fetch(endPoint)
@@ -181,61 +151,3 @@ function postAppointment(first_name, last_name, email, service_id, hairdresser_i
         document.querySelector('#renderNewAppointment').innerHTML += newAppointment.renderAppointmentCard()
     })
 }
-
-/*function hideForm() {
-    var x = document.querySelector("form#create-appointment-form");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-}*/
-
-
-/*function showHairdresser() {
-    var x = document.querySelector("#hairdresser-container");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-}*/
-
-// destroys instance of appointment
-var down = document.getElementById("GFG_DOWN");
-            function GFG_Fun() {
-                
-                // Create a form synamically
-                var form = document.createElement("form");
-                form.setAttribute("method", "post");
-                form.setAttribute("action", "submit.php");
-  
-                // Create an input element for emailID
-                var ID = document.createElement("input");
-                ID.setAttribute("type", "text");
-                ID.setAttribute("name", "emailID");
-                ID.setAttribute("placeholder", "E-Mail ID");
-  
-                // Create an input element for password
-                var PWD = document.createElement("input");
-                PWD.setAttribute("type", "password");
-                PWD.setAttribute("name", "password");
-                PWD.setAttribute("placeholder", "Password");
-  
-                // Create a submit button
-                var s = document.createElement("input");
-                s.setAttribute("type", "submit");
-                s.setAttribute("value", "Submit");
-  
-                // Append the email_ID input to the form
-                form.append(ID); 
-                
-                // Append the password to the form
-                form.append(PWD); 
-                
-                // Append the button to the form
-                form.append(s); 
-  
-                document.getElementsByTagName("body")[0]
-               .appendChild(form);
-            }

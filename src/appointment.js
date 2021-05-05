@@ -11,9 +11,6 @@ class Appointment {
         this.datetime = appointmentAttributes.datetime
     }
     
-
-
-    
     getAppointments() {
         fetch(endPoint)
         .then(response => response.json())
